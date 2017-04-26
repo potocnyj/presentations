@@ -18,7 +18,7 @@ func main() {
 
 	http.HandleFunc("/w", handleIncCounter)
 	http.HandleFunc("/r", handleReadCounter)
-	http.ListenAndServe("localhost:8080", nil)
+	http.ListenAndServe("localhost:8083", nil)
 }
 
 var globalCounter struct {

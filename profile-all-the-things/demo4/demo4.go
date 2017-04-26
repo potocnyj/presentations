@@ -28,7 +28,7 @@ func init() {
 func main() {
 	http.HandleFunc("/w", handleIncCounter)
 	http.HandleFunc("/r", handleReadCounter)
-	http.ListenAndServe("localhost:8080", nil)
+	http.ListenAndServe("localhost:8084", nil)
 }
 
 // trackRequest wraps an http handler with tracing information

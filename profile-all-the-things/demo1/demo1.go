@@ -7,13 +7,17 @@ import (
 	"io"
 	"log"
 	"net/http"
+
+	// Importing net/http/pprof initializes
+	// handlers for pprof under /debug/pprof
 	_ "net/http/pprof"
+
 	"sync"
 )
 
 func main() {
 	http.HandleFunc("/", handler)
-	http.ListenAndServe("localhost:8080", nil)
+	http.ListenAndServe("localhost:8081", nil)
 }
 
 var globalCounter struct {

@@ -1,5 +1,6 @@
 // demo2 shows an example of enabling block profiling
-// to identify contention in a simple http service.
+// to identify operations that cause goroutines
+// to block for long periods of time.
 package main
 
 import (
@@ -18,7 +19,7 @@ func main() {
 	runtime.SetBlockProfileRate(100)
 
 	http.HandleFunc("/", handler)
-	http.ListenAndServe("localhost:8080", nil)
+	http.ListenAndServe("localhost:8082", nil)
 }
 
 var globalCounter struct {
